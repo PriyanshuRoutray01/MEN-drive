@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Men Drive</title>
+  <style>
+    :root {
+      --bg-color: #eef2f5;
+      --text-color: #333;
+      --accent: #0077cc;
+      --nav-bg: #0077cc;
+      --nav-text: white;
+    }
+
+    .dark-mode {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --accent: #00aaff;
+      --nav-bg: #1f1f1f;
+      --nav-text: #f1f1f1;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    nav {
+      background-color: var(--nav-bg);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-title {
+      font-size: 1.5em;
+      color: var(--nav-text);
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: var(--nav-text);
+      font-weight: 500;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      background: none;
+      border: 2px solid var(--nav-text);
+      border-radius: 20px;
+      padding: 5px 12px;
+      color: var(--nav-text);
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .text-section, .animation-section {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: var(--accent);
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 12px 24px;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    svg {
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+      animation: float 2s infinite ease-in-out;
+      fill: var(--accent);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-title">Men Drive</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/login">Upload</a>
+      <a href="/login">Download</a>
+      <a href="/about">About</a>
+      <a href="/login">Sign In</a>
+      <a href="/register">Sign Up</a>
+    </div>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Mode</button>
+  </nav>
+
+  <!-- Content -->
+  <div class="container">
+    <div class="text-section">
+      <h1>Welcome to Men Drive 🚗</h1>
+      <p>☁️ Cloud-based file storage</p>
+      <p>🗂️ Upload and organize your files easily</p>
+      <p>📥 Download your data anytime, anywhere</p>
+      <p>🔐 Secure and private access</p>
+      <div class="links">
+        <a href="/login">Sign In</a>
+        <a href="/register">Sign Up</a>
+      </div>
+    </div>
+    <div class="animation-section">
+      <svg viewBox="0 0 64 64">
+        <path d="M32 12l10 10h-6v14h-8V22h-6l10-10zM12 42v10h40V42h6v14H6V42h6z"/>
+      </svg>
+      <svg viewBox="0 0 64 64">
+        <path d="M32 52l10-10h-6V28h-8v14h-6l10 10zM12 18v-6h40v6h6V6H6v12h6z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Dark Mode Script -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
